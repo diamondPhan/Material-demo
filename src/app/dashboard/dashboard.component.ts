@@ -1,7 +1,7 @@
-import {AfterViewInit, Component, ViewChild,OnInit, ChangeDetectorRef} from '@angular/core';
-import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
-import {MatSort, MatSortModule} from '@angular/material/sort';
-import {MatTableDataSource} from '@angular/material/table';
+import { AfterViewInit, Component, ViewChild, OnInit, ChangeDetectorRef } from '@angular/core';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import { MatSort, MatSortModule } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 
 export interface UserData {
   id: string;
@@ -31,19 +31,23 @@ export class DashboardComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private cdr: ChangeDetectorRef) { 
+  constructor(private cdr: ChangeDetectorRef) {
     // Create 100 users
-    const users = Array.from({length: 100}, (_, k) => createNewUser(k + 1));
+    const users = Array.from({ length: 100 }, (_, k) => this.createNewUser(k + 1));
 
     // Assign the data to the data source for the table to render
     this.dataSource = new MatTableDataSource(users);
-    this.cdr.detectChanges();
-    // this.sort;
-    // this.paginator;
+    // this.cdr.detectChanges();
+    console.log("this.dataSource : ", this.dataSource.filteredData);
+
+    this.sort;
+    this.paginator;
   }
 
   ngOnInit(): void {
+    console.log("this.dataSource : ", this.dataSource);
   }
+
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
@@ -57,15 +61,16 @@ export class DashboardComponent implements AfterViewInit {
       this.dataSource.paginator.firstPage();
     }
   }
-}
-function createNewUser(id: number): UserData {
-  const name = NAMES[Math.round(Math.random() * (NAMES.length - 1))] + ' ' +
+
+  createNewUser(id: number): UserData {
+    const name = NAMES[Math.round(Math.random() * (NAMES.length - 1))] + ' ' +
       NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0) + '.';
 
-  return {
-    id: id.toString(),
-    name: name,
-    progress: Math.round(Math.random() * 100).toString(),
-    color: COLORS[Math.round(Math.random() * (COLORS.length - 1))]
-  };
+    return {
+      id: id.toString(),
+      name: name,
+      progress: Math.round(Math.random() * 100).toString(),
+      color: COLORS[Math.round(Math.random() * (COLORS.length - 1))]
+    };
+  }
 }
