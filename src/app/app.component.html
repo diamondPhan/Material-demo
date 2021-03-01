@@ -6,6 +6,7 @@
   <span>My application</span>
   <span class="example-spacer"></span>
   <span class="text-normal">Hello!! User</span> &nbsp;
+  <mat-icon matBadge="15" matBadgeColor="warn">message</mat-icon> &nbsp;  &nbsp;
   <button mat-stroked-button class="example-stroked">
     My Detail
   </button>
@@ -20,14 +21,24 @@
         <mat-icon>home</mat-icon>
         Dashboard
       </a>
-      <a mat-list-item href="#">
+      <a mat-list-item href="">
         <mat-icon class="icon-sidenav">list</mat-icon>
         <span>Item List</span>
+      </a>
+      <a mat-list-item href="/card">
+        <mat-icon class="icon-sidenav">pets</mat-icon>
+        <span>Card Item</span>
+      </a>
+      <a mat-list-item href="/addnewpet">
+        <mat-icon class="icon-sidenav">input</mat-icon>
+        <span>Add New Pet</span>
       </a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content >
+    <div class="content">
   <router-outlet></router-outlet>
+</div>
   </mat-sidenav-content>
 </mat-sidenav-container>
 <!-- End SideNav -->

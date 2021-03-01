@@ -1,0 +1,22 @@
+
+.example-card {
+  width: 400px;
+  height: 595px;
+  margin: 30px;
+  float:left;
+}
+img{
+    width: 400px;
+    height: 345px;
+}
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+.example-header-image-alaska {
+    background-image: url('https://th.bing.com/th/id/OIP.IHoyWjX8p-Ujiqs5QhVatwHaHa?pid=ImgDet&rs=1');
+    background-size: cover;
+  }
+.content{
+    margin: 10px;
+}
