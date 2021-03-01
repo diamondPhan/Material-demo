@@ -1,29 +1,68 @@
-
-<div class="card" >
+<h1>Add New Pet</h1>
+<!-- <div class="card" >
     <div class="card-header">
       File Upload
     </div>
     <div class="card-body">
       <mat-form-field>
     <div>
-      <mat-toolbar>
+      <mat-toolbar> -->
         <!-- Display files names -->
-        <input matInput [(ngModel)]="fileAttr" readonly name="name" />
+        <!-- <input matInput [(ngModel)]="fileAttr" readonly name="name" /> -->
   
         <!-- Browse Button -->
-        <button mat-flat-button color="primary">
+        <!-- <button mat-flat-button color="primary">
           Browse File
         </button>
-      </mat-toolbar>
+      </mat-toolbar> -->
   
       <!-- Fetch selected filed on change -->
-      <input type="file" #fileInput id="uploadFile" (change)="uploadFileEvt($event)" name="uploadFile" multiple="multiple"
+      <!-- <input type="file" #fileInput id="uploadFile" (change)="uploadFileEvt($event)" name="uploadFile" multiple="multiple"
         accept="image/*" />
     </div>
   </mat-form-field>
-    </div>
+    </div> -->
   
-    <div class="card-footer">
+    <!-- <div class="card-footer">
       <div><img src="{{dataimage}}" width="300px"></div>
     </div>
-  </div>
+  </div> -->
+  <!-- form input start -->
+  <mat-form-field appearance="fill">
+    <mat-label>Pet Name</mat-label>
+    <input matInput>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Pet type</mat-label>
+    <mat-select>
+      <mat-option value="one">Shiba</mat-option>
+      <mat-option value="two">Alaska</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Description</mat-label>
+    <textarea matInput></textarea>
+  </mat-form-field>
+  
+  <mat-radio-group aria-label="Select an option">
+      <mat-label>Choose gender:</mat-label><br>
+    <mat-radio-button value="1" class="radio-button">Male</mat-radio-button>
+    <mat-radio-button value="2">Female</mat-radio-button>
+  </mat-radio-group>
+
+  <section class="example-section">
+    <mat-checkbox class="example-margin">Vaccination</mat-checkbox>
+    <ul>
+        <li>
+          <mat-checkbox>Vaccine A</mat-checkbox>
+        </li>
+        <li>
+            <mat-checkbox>Vaccine B</mat-checkbox>
+          </li>
+          <li>
+            <mat-checkbox>Vaccine C</mat-checkbox>
+          </li>
+
+      </ul>
+  </section>
+  <!-- form input end -->

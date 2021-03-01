@@ -45,7 +45,7 @@ export class AddnewpetComponent implements OnInit {
   //   } else {
   //     this.fileAttr = 'Choose File';
   //   }
-  // }
+   }
 }
-
+    
 
