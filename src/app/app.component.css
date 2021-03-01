@@ -1,0 +1,29 @@
+.example-icon{
+    border-width: 0;
+}
+.example-spacer{
+    flex: 1 1 auto;
+}
+.example-container{
+    height: 100%;
+}
+.example-sidenav{
+    max-width: 350px;
+}
+#sidenav{
+    width: 300px;
+    height: 100%;
+}
+.text-normal{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+}
+a{
+    width: 290px;
+    height: 50px;
+    float: left;
+    margin-left: 5px;
+}
+.icon-sidenav{
+    margin: 13px 0px;
+}
