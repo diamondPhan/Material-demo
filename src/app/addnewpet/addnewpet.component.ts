@@ -1,4 +1,5 @@
 import { Component, OnInit,VERSION, ViewChild, ElementRef } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup,ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-addnewpet',
@@ -6,46 +7,29 @@ import { Component, OnInit,VERSION, ViewChild, ElementRef } from '@angular/core'
   styleUrls: ['./addnewpet.component.css']
 })
 export class AddnewpetComponent implements OnInit {
-
-  constructor() { }
+  public addNewForm=new FormGroup({
+    petName:new FormControl(),
+    type: new FormControl(),
+    description: new FormControl(),
+    gender: new FormControl(),
+    vaccineA:new FormControl(),
+    vaccineB:new FormControl(),
+    vaccineC:new FormControl(),
+    promotion:new FormControl()
+});
+// addNewForm: FormGroup;
+  constructor(private fb:FormBuilder) { }
 
   ngOnInit(): void {
+    // this.addNewForm=this.fb.group({
+    //   petName:['hihi',Validators.required]
+    // })
   }
-  ame = 'Angular ' + VERSION.major;
-  dataimage:any;
-
-   @ViewChild('fileInput') fileInput: ElementRef;
-  fileAttr = 'Choose File';
-
-
-  uploadFileEvt(imgFile: any) {
-  //   if (imgFile.target.files && imgFile.target.files[0]) {
-  //     this.fileAttr = '';
-  //     Array.from(imgFile.target.files).forEach((file: File) => 
-  //       {
-  //       this.fileAttr += file.name ;
-  //     }
-  //     );
-
-  //     // HTML5 FileReader API
-  //     let reader = new FileReader();
-  //     reader.onload = (e: any) => {
-  //       let image = new Image();
-  //       image.src = e.target.result;
-  //       image.onload = rs => {
-  //         let imgBase64Path = e.target.result;
-  //         console.log(imgBase64Path);
-  //         this.dataimage = imgBase64Path;
-  //       };
-  //     };
-  //     reader.readAsDataURL(imgFile.target.files[0]);
-      
-  //     // Reset if duplicate image uploaded again
-  //     this.fileInput.nativeElement.value = "";
-  //   } else {
-  //     this.fileAttr = 'Choose File';
-  //   }
-   }
+onSubmit(){
+  let temp = JSON.stringify(this.addNewForm.value);
+  console.log("name:"+ temp);
+}
+   
 }
     
 

@@ -1,75 +1,52 @@
-<div class="addPet">
+<div class="addPet" >
 <h1>Add New Pet</h1>
-<!-- <div class="card" >
-    <div class="card-header">
-      File Upload
-    </div>
-    <div class="card-body">
-      <mat-form-field>
-    <div>
-      <mat-toolbar> -->
-        <!-- Display files names -->
-        <!-- <input matInput [(ngModel)]="fileAttr" readonly name="name" /> -->
-  
-        <!-- Browse Button -->
-        <!-- <button mat-flat-button color="primary">
-          Browse File
-        </button>
-      </mat-toolbar> -->
-  
-      <!-- Fetch selected filed on change -->
-      <!-- <input type="file" #fileInput id="uploadFile" (change)="uploadFileEvt($event)" name="uploadFile" multiple="multiple"
-        accept="image/*" />
-    </div>
-  </mat-form-field>
-    </div> -->
-  
-    <!-- <div class="card-footer">
-      <div><img src="{{dataimage}}" width="300px"></div>
-    </div>
-  </div> -->
+<form [formGroup]="addNewForm" (ngSubmit)="onSubmit()">
   <!-- form input start -->
   <mat-form-field appearance="fill">
-    <mat-label>Pet Name</mat-label>
-    <input matInput>
+    <mat-label >Pet Name</mat-label>
+    <input matInput formControlName="petName" >
   </mat-form-field><br>
+  
   <mat-form-field appearance="fill">
     <mat-label>Pet type</mat-label>
-    <mat-select>
-      <mat-option value="one">Shiba</mat-option>
-      <mat-option value="two">Alaska</mat-option>
+    <mat-select formControlName="type">
+      <mat-option value="shiba">Shiba</mat-option>
+      <mat-option value="alaska">Alaska</mat-option>
     </mat-select>
   </mat-form-field><br>
   <mat-form-field appearance="fill">
     <mat-label>Description</mat-label>
-    <textarea matInput></textarea>
+    <textarea matInput formControlName="description"></textarea>
   </mat-form-field><br>
   
-  <mat-radio-group aria-label="Select an option">
+  <mat-radio-group aria-label="Select an option" formControlName="gender">
       <mat-label>Choose gender:</mat-label><br>
-    <mat-radio-button value="1" class="radio-button">Male</mat-radio-button>
-    <mat-radio-button value="2">Female</mat-radio-button>
+    <mat-radio-button value="male" class="radio-button">Male</mat-radio-button>
+    <mat-radio-button value="female">Female</mat-radio-button>
   </mat-radio-group>
 
-  <section class="example-section">
+  <section class="example-section" >
     <mat-label class="example-margin">Injected Vaccination</mat-label>
     <ul>
         <li>
-          <mat-checkbox>Vaccine A</mat-checkbox>
+          <mat-checkbox formControlName="vaccineA">Vaccine A</mat-checkbox>
         </li>
         <li>
-            <mat-checkbox>Vaccine B</mat-checkbox>
+            <mat-checkbox formControlName="vaccineB">Vaccine B</mat-checkbox>
           </li>
           <li>
-            <mat-checkbox>Vaccine C</mat-checkbox>
+            <mat-checkbox formControlName="vaccineC">Vaccine C</mat-checkbox>
           </li>
 
       </ul>
   </section>
   <section>
-  <mat-slide-toggle>
+  <mat-slide-toggle formControlName="promotion">
     Promotion
   </mat-slide-toggle>
-</section>
-  <!-- form input end -->
+</section> 
+<button type="submit">Submit</button>
+</form>
+<p>value {{addNewForm.value |json}}</p>
+   <!-- form input end -->
 </div>

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -52,6 +53,7 @@ import {MatTreeModule} from '@angular/material/tree';
 import {OverlayModule} from '@angular/cdk/overlay';
 import { CarditemComponent } from './carditem/carditem.component';
 import { AddnewpetComponent } from './addnewpet/addnewpet.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,7 +64,9 @@ import { AddnewpetComponent } from './addnewpet/addnewpet.component';
   ],
   imports: [
     BrowserModule,
-      AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule, 
+    AppRoutingModule,
     BrowserAnimationsModule,
     A11yModule,
     ClipboardModule,
