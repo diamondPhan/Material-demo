@@ -17,13 +17,9 @@ export class AddnewpetComponent implements OnInit {
     vaccineC:new FormControl(),
     promotion:new FormControl()
 });
-// addNewForm: FormGroup;
-  constructor(private fb:FormBuilder) { }
+  constructor() { }
 
   ngOnInit(): void {
-    // this.addNewForm=this.fb.group({
-    //   petName:['hihi',Validators.required]
-    // })
   }
 onSubmit(){
   let temp = JSON.stringify(this.addNewForm.value);
